@@ -1,4 +1,5 @@
 O:I learned more about Spring Framework (particuarly Spring Boot) and its clear opinionated concepts, like Inversion of Control (IoC) and dependency injection (DI). Spring framworks offer a wide variety of tools and projects to support an extensive usecases. Some of the most commonly used tools, like Spring Data JPA, Spring Security and Spring Cloud can be easily integrated and adopted using tools like Spring Initializr to start a Spring Boot starter application. I also learnt to mock and test MVC APIs in Spring Boot.
+I also got to practice Pair programming which I have only done a few times last year, which is a refreshing experience.
 
 R: Amicible
 
