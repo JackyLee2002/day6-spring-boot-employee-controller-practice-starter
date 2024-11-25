@@ -1,7 +1,5 @@
 package com.oocl.springbootemployee.model;
 
-import java.math.BigDecimal;
-
 public class Employee {
     private Integer id;
     private String name;
