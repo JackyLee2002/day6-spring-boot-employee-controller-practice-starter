@@ -2,10 +2,8 @@ package com.oocl.springbootemployee.repository;
 
 import com.oocl.springbootemployee.model.Employee;
 import com.oocl.springbootemployee.model.Gender;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
 import org.springframework.stereotype.Repository;
 
-import java.awt.print.Pageable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,16 +14,16 @@ public class EmployeeRepository {
     private List<Employee> employees = new ArrayList<>();
 
     public EmployeeRepository() {
-        employees.add(new Employee(1,"Tom1",18, Gender.MALE,5000.0));
-        employees.add(new Employee(2,"Tom2",18,Gender.MALE,7000.0));
-        employees.add(new Employee(3,"Tom3",18,Gender.MALE,6000.0));
+        employees.add(new Employee(1, "Tom1", 18, Gender.MALE, 5000.0));
+        employees.add(new Employee(2, "Tom2", 18, Gender.MALE, 7000.0));
+        employees.add(new Employee(3, "Tom3", 18, Gender.MALE, 6000.0));
     }
 
     public void resetRepository() {
         employees.clear();
-        employees.add(new Employee(1,"Tom1",18, Gender.MALE,5000.0));
-        employees.add(new Employee(2,"Tom2",18,Gender.MALE,7000.0));
-        employees.add(new Employee(3,"Tom3",18,Gender.MALE,6000.0));
+        employees.add(new Employee(1, "Tom1", 18, Gender.MALE, 5000.0));
+        employees.add(new Employee(2, "Tom2", 18, Gender.MALE, 7000.0));
+        employees.add(new Employee(3, "Tom3", 18, Gender.MALE, 6000.0));
     }
 
     public List<Employee> getAll() {
@@ -37,7 +35,7 @@ public class EmployeeRepository {
     }
 
     public List<Employee> getByGender(Gender gender) {
-            return employees.stream()
+        return employees.stream()
                 .filter(employee -> employee.getGender().equals(gender))
                 .collect(Collectors.toList());
     }
@@ -54,8 +52,6 @@ public class EmployeeRepository {
         if (Objects.isNull(employeeToBeUpdated)) {
             employees.add(employee);
         }
-
-        System.out.println(employeeToBeUpdated.toString());
 
         employeeToBeUpdated.setAge(employee.getAge());
         employeeToBeUpdated.setSalary(employee.getSalary());
@@ -86,7 +82,7 @@ public class EmployeeRepository {
 
     public List<Employee> getEmployeesPaged(Integer page, Integer size) {
         List<Employee> employeesPaged = employees.stream()
-                .skip((page-1)*size)
+                .skip((page - 1) * size)
                 .limit(size)
                 .collect(Collectors.toList());
         return employeesPaged;
